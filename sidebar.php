@@ -1,3 +1,4 @@
+<?php include_once "database.php" ?>
 <div id="sidebar" class="four columns">
 
   <div class="widget widget_search">
@@ -13,12 +14,19 @@
   <div class="widget widget_categories group">
     <h3>Categories.</h3>
     <ul>
-      <li><a href="#" title="">Wordpress</a> (2)</li>
-      <li><a href="#" title="">Ghost</a> (14)</li>
-      <li><a href="#" title="">Joomla</a> (5)</li>
-      <li><a href="#" title="">Drupal</a> (3)</li>
-      <li><a href="#" title="">Magento</a> (2)</li>
-      <li><a href="#" title="">Uncategorized</a> (9)</li>
+    <?php
+     $sorgu = $db->query("SELECT kategoriler.Kategori_Adi,COUNT(*) as sayi
+                          FROM kategoriler INNER JOIN icerik 	ON
+                          kategoriler.id=icerik.kategori_id
+                          GROUP BY icerik.kategori_id ORDER BY sayi DESC" , PDO::FETCH_ASSOC);
+     if($sorgu -> rowCount()){
+       foreach ($sorgu as $row) {
+     ?>
+      <li><a href="#" title=""><?php echo $row['Kategori_Adi'] ?></</a> (<?php echo $row['sayi'] ?>)</li>
+      <?php
+        }
+      }
+      ?>
     </ul>
   </div>
 
