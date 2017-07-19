@@ -1,16 +1,18 @@
+<?php include_once "database.php" ?>
 <footer>
 
    <div class="row">
-
+     <?php
+     $sorgu = $db->query("SELECT * FROM sosyalmedya ", PDO::FETCH_ASSOC)->fetch();
+     ?>
      <div class="twelve columns">
      <ul class="social-links">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-github-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            <li><a href= "https://www.facebook.com/<?php echo $sorgu['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/<?php echo $sorgu['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/<?php echo $sorgu['googleplus'] ?>"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="https://github.com/<?php echo $sorgu['github'] ?>"><i class="fa fa-github-square"></i></a></li>
+            <li><a href="https://www.instagram.com/<?php echo $sorgu['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
+
          </ul>
      </div>
 

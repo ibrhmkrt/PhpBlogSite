@@ -12,7 +12,7 @@
          </div>
 
   <div class="widget widget_categories group">
-    <h3>Categories.</h3>
+    <h3>KATEGORILER</h3>
     <ul>
     <?php
      $sorgu = $db->query("SELECT kategoriler.Kategori_Adi,COUNT(*) as sayi
@@ -31,15 +31,14 @@
   </div>
 
   <div class="widget widget_text group">
-    <h3>Widget Text.</h3>
+    <h3>PHP HAKKINDA</h3>
 
-    <p>Lorem ipsum Ullamco commodo laboris sit dolore commodo aliquip incididunt fugiat esse dolor aute fugiat minim eiusmod do velit labore fugiat officia ad sit culpa labore in consectetur sint cillum sint consectetur voluptate adipisicing Duis irure magna ut sit amet reprehenderit.</p>
+    <p>PHP,ya da resmi adıyla "PHP: Hypertext Preprocessor"(PHP: Hipermetin önişlemcisi), HTML'e gömülebilen, sunucu tarafından işlenen kodlar yazabileceğiniz, tamamen açık kaynaklı bir dildir. Yani dinamik içerik oluşturmada tercih edebileceğiniz bir programlama dilidir.</p>
 
   </div>
 
   <div class="widget widget_tags">
          <h3>Post Tags.</h3>
-
          <div class="tagcloud group">
             <a href="#">Corporate</a>
             <a href="#">Onepage</a>
