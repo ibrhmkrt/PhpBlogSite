@@ -84,6 +84,7 @@
 	                  </ul>
 			      	</li>
 			      	<li><a href="page.php"><?php echo $row['Menu5'] ?></a></li>
+              <li><a href="#"  class="fa fa-sign-out" style="font-size:30px; position:absolute ; left:660px;"></a></li>
 			   	</ul> <!-- end #nav -->
           <?php
             }
