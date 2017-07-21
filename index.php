@@ -1,14 +1,3 @@
-
-<?php
-include("database.php");
-ob_start();
-session_start();
-if(!isset($_SESSION["login"])){
-  header("Location:giris.php");
-}
-else {
-
-?>
 <!-- header -->
   <?php include_once "header.php" ?>
 
@@ -33,7 +22,7 @@ else {
    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
    <script src="js/main.js"></script>
-<?php } ?>
+
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 <?php include_once "database.php" ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
@@ -50,8 +51,17 @@
         if($sorgu -> rowCount()){
           foreach ($sorgu as $row) {
         ?>
+
 		      <h1 id="logo-text"><a href="index.php" title=""><?php echo $row['Baslik'] ?></a></h1>
-				<p id="intro"><?php echo $row ['Slogan'] ?></p>
+        <?php
+        if(isset($_SESSION["user"]))
+            echo "<p id='intro'> Hosgeldiniz $_SESSION[user]</p>";
+        else
+           echo "<p id='intro'>$row[Slogan]</p>";
+
+        ?>
+
+
         <?php
           }
         }
@@ -84,8 +94,12 @@
 	                  </ul>
 			      	</li>
 			      	<li><a href="page.php"><?php echo $row['Menu5'] ?></a></li>
-              <li><a href="#"  class="fa fa-sign-out" style="font-size:30px; position:absolute ; left:660px;"></a></li>
-			   	</ul> <!-- end #nav -->
+              <?php if (isset($_SESSION["login"]))
+                        echo "<li><a href='logout.php' class='fa fa-sign-out' aria-hidden='true' style='font-size:30px; position:absolute ; left:660px;'></a></li>";
+                    else
+                        echo "<li><a href='giris.php' class='fa fa-sign-in' aria-hidden='true' style='font-size:30px; position:absolute ; left:660px;'></a></li>";
+              ?>
+          </ul> <!-- end #nav -->
           <?php
             }
           }
