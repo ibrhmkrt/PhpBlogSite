@@ -34,15 +34,26 @@
 
          <h3>Photostream</h3>
 
-         <ul class="photostream group">
-            <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-            <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-            <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-            <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-            <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-            <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-            <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-            <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+            <?php function instagram()
+            {
+              $username = 'kotlindeveloper';
+              $json = file_get_contents('https://www.instagram.com/'.$username.'/media/');
+              $instagram_feed_data = json_decode($json, true);
+              if (isset($instagram_feed_data['items'])) {
+                return $instagram_feed_data['items'];
+        ?>
+        <?php
+        }
+        }
+        ?>
+            <ul class="photostream group">
+            <?php foreach (instagram() as $item) {
+        $link = $item['link'];
+        $img_url = $item['images']['low_resolution']['url'];
+        $caption = isset($item['caption']) ? $item['caption']['text'] : '';
+        echo "<li><a href='$link'><img src='$img_url'></a></li>";
+        } ?>
+
          </ul>
 
       </div>

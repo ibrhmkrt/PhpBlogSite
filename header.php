@@ -53,14 +53,9 @@
         ?>
 
 		      <h1 id="logo-text"><a href="index.php" title=""><?php echo $row['Baslik'] ?></a></h1>
-        <?php
-        if(isset($_SESSION["user"]))
-            echo "<p id='intro'> Hosgeldiniz $_SESSION[user]</p>";
-        else
-           echo "<p id='intro'>$row[Slogan]</p>";
 
-        ?>
 
+          <p id='intro'><?php echo  $row['Slogan'] ?></p>;
 
         <?php
           }
@@ -94,6 +89,10 @@
 	                  </ul>
 			      	</li>
 			      	<li><a href="page.php"><?php echo $row['Menu5'] ?></a></li>
+              <?php
+              if(isset($_SESSION["adi"]))
+                  echo "<li><a style='font-size:11px; position:absolute ; left: 350px; width: 300px; text-align: right;'> $_SESSION[adi]</a></li>";
+              ?>
               <?php if (isset($_SESSION["login"]))
                         echo "<li><a href='logout.php' class='fa fa-sign-out' aria-hidden='true' style='font-size:30px; position:absolute ; left:660px;'></a></li>";
                     else

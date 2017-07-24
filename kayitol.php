@@ -15,20 +15,40 @@
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
-		<title>Kullanıcı Girisi</title>
+		<title>Kayit ol</title>
 	</head>
+
 	<body>
 		<div class="container">
 			<div class="row main">
 				<div class="panel-heading">
 	               <div class="panel-title text-center">
-	               		<h1 class="title">Giris Ekranı</h1>
+	               		<h1 class="title">Kayıt Ol</h1>
 	               		<hr />
 	               	</div>
 	            </div>
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="login.php">
+					<form class="form-horizontal" method="post" action="kaydet.php">
 
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Adınız Soyadınız</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
 
 						<div class="form-group">
 							<label for="username" class="cols-sm-2 control-label">Kullanıcı Adı</label>
@@ -52,21 +72,18 @@
 
 
 						<div class="form-group ">
-							<input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Giris Yap">
+							<input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Kayıt Ol">
 						</div>
-						<div class="login-register">
-				            <a href="kayitol.php">Kayıt Ol</a>
-				         </div>
-                 <br>
-                 <div class="login-register">
-     				            <a href="index.php">Anasayfa</a>
-     				         </div>
-					</form>
 
+						<div class="login-register">
+				            <a href="giris.php">Giris Yap</a>
+				         </div>
+					</form>
 				</div>
 			</div>
 		</div>
 
 		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
 	</body>
 </html>

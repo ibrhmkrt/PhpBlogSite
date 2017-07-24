@@ -37,13 +37,7 @@
 
   </div>
 
-  <div class="widget widget_tags">
-         <h3>Post Tags.</h3>
-         <div class="tagcloud group">
-            <a href="">HTML</a>
-         </div>
-
-      </div>
+  
 
       <div class="widget widget_popular">
          <h3>Popular Post.</h3>
