@@ -3,9 +3,9 @@
 
   <div class="widget widget_search">
             <h3>Search</h3>
-            <form action="#">
+            <form action="index.php" method="get">
 
-               <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+               <input type="text" name="arama" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
                <input type="submit" value="" class="submit-search">
 
             </form>
@@ -15,14 +15,14 @@
     <h3>KATEGORILER</h3>
     <ul>
     <?php
-     $sorgu = $db->query("SELECT kategoriler.Kategori_Adi,COUNT(*) as sayi
-                          FROM kategoriler INNER JOIN icerik 	ON
-                          kategoriler.id=icerik.kategori_id
-                          GROUP BY icerik.kategori_id ORDER BY sayi DESC" , PDO::FETCH_ASSOC);
+     $sorgu = $db->query("SELECT kategoriler.id , kategoriler.Kategori_Adi,COUNT(*) as sayi
+                          FROM kategoriler INNER JOIN main	ON
+                          kategoriler.id=main.kategori_id
+                          GROUP BY main.kategori_id ORDER BY sayi DESC" , PDO::FETCH_ASSOC);
      if($sorgu -> rowCount()){
        foreach ($sorgu as $row) {
      ?>
-      <li><a href="#" title=""><?php echo $row['Kategori_Adi'] ?></</a> (<?php echo $row['sayi'] ?>)</li>
+      <li><a href="?kategori=<?php echo $row['id'] ?>" title=""><?php echo $row['Kategori_Adi'] ?></a> (<?php echo $row['sayi'] ?>)</li>
       <?php
         }
       }
@@ -37,7 +37,19 @@
 
   </div>
 
-  
+  <div class="widget widget_tags">
+         <h3>Etiket</h3>
+
+         <div class="tagcloud group">
+
+            <a href="#">PHP</a>
+            <a href="#">HTML</a>
+            <a href="#">CSS</a>
+            <a href="#">JAVA Script</a>
+         </div>
+
+      </div>
+
 
       <div class="widget widget_popular">
          <h3>Popular Post.</h3>

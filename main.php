@@ -1,7 +1,15 @@
 <?php include_once "database.php" ?>
 <div id="main" class="eight columns">
   <?php
-   $sorgu = $db->query("SELECT * FROM main " , PDO::FETCH_ASSOC);
+  if (isset($_GET['kategori'])) {
+    $sorgu = $db->query("SELECT * FROM main WHERE main.kategori_id=".$_GET['kategori']."  ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
+  }
+  elseif (isset($_GET['arama'])) {
+      $sorgu = $db->query("SELECT * FROM main WHERE yazi_icerigi LIKE '%".$_GET['arama']."%'  ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
+    }
+  else
+    $sorgu = $db->query("SELECT * FROM main ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
+
    if($sorgu -> rowCount()){
      foreach ($sorgu as $row) {
    ?>
@@ -33,7 +41,7 @@
   </article> <!-- end entry -->
 
 
-  
+
 <?php
 }
 }

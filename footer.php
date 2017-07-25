@@ -70,7 +70,7 @@
          </ul>
       </div>
 
-      <p class="copyright">&copy; Copyright 2014 Keep It Simple. &nbsp; Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a>.</p>
+      <p class="copyright">&copy; 2017 &nbsp; Design by <a title="Styleshout" href="http://www.styleshout.com/">ibrahim Kurt</a>.</p>
 
    </div> <!-- End row -->
 
