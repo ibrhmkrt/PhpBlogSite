@@ -23,6 +23,6 @@ $sorgu=$db ->query("SELECT * FROM kullanicilar WHERE Kullanici_Adi='$kadi' and S
 
  $sorgu=$db ->query("SELECT * FROM kullanicilar WHERE Kullanici_Adi='$kadi' and Sifre='$sifre'" , PDO::FETCH_ASSOC) -> fetch();
  $_SESSION["adi"] = $sorgu['AdiSoyadi'];
- 
+  $_SESSION["id"] = $sorgu['id'];
  ob_end_flush();
 ?>

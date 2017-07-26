@@ -18,15 +18,13 @@
 
       <div class="six columns info">
 
-         <h3>About Keep It Simple</h3>
+         <h3>Hakkında</h3>
 
-         <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-         Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-         nibh id elit.
+         <p>
+           Bu staj bloğu Atatürk Üniversite BAUM'da staj yapan İbrahim Kurt'a aittir.
          </p>
 
-         <p>Lorem ipsum Sed nulla deserunt voluptate elit occaecat culpa cupidatat sit irure sint
-         sint incididunt cupidatat esse in Ut sed commodo tempor consequat culpa fugiat incididunt.</p>
+
 
       </div>
 
@@ -65,9 +63,8 @@
          <ul class="navigate group">
             <li><a href="index.php">Home</a></li>
             <li><a href="blog.php">Blog</a></li>
-            <li><a href="demo.php">Demo</a></li>
             <li><a href="archives.php">Archives</a></li>
-            <li><a href="page.php">About</a></li>
+            <li><a href="page.php">Page</a></li>
          </ul>
       </div>
 
