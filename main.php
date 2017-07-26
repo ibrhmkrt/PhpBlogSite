@@ -8,7 +8,7 @@
       $sorgu = $db->query("SELECT * FROM main WHERE yazi_icerigi LIKE '%".$_GET['arama']."%'  ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
     }
   else
-    $sorgu = $db->query("SELECT * FROM main ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
+    $sorgu = $db->query("SELECT * FROM main ORDER BY yazi_tarih DESC LIMIT 0,3 " , PDO::FETCH_ASSOC);
 
    if($sorgu -> rowCount()){
      foreach ($sorgu as $row) {
@@ -19,7 +19,7 @@
     <header class="entry-header">
 
       <h2 class="entry-title">
-        <a href="single.php" title=""><?php echo $row['yazi_baslik'] ?></a>
+        <a href="single.php?gonderi=<?php echo $row['id'] ?>" title=""><?php echo $row['yazi_baslik'] ?></a>
       </h2>
 
       <div class="entry-meta">

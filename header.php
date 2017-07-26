@@ -79,24 +79,23 @@
            foreach ($sorgu as $row) {
          ?>
 			   	<ul id="nav" class="nav">
-			      	<li class="current"><a href="index.php"><?php echo $row['Menu1'] ?></a></li>
-	               <li><a href="demo.php"><?php echo $row['Menu2'] ?></a></li>
-	               <li><a href="archives.php"><?php echo $row['Menu3'] ?></a></li>
-			      	<li class="has-children"><a href="single.php"><?php echo $row['Menu4'] ?></a>
+			      	<li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/index.php") print "class='current'"; ?>><a href="index.php"><?php echo $row['Menu1'] ?></a></li>
+	               <li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/archives.php") print "class='current'"; ?>><a href="archives.php"><?php echo $row['Menu3'] ?></a></li>
+			      	<li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/blog.php") print "class='current has-children'"; ?>><a href="blog.php"><?php echo $row['Menu4'] ?></a>
 							<ul>
 	                     <li><a href="blog.php">Blog Entries</a></li>
 	                     <li><a href="single.php">Single Blog</a></li>
 	                  </ul>
 			      	</li>
-			      	<li><a href="page.php"><?php echo $row['Menu5'] ?></a></li>
+			      	<li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/page.php") print "class='current'"; ?>><a href="page.php"><?php echo $row['Menu5'] ?></a></li>
               <?php
               if(isset($_SESSION["adi"]))
-                  echo "<li><a style='font-size:11px; position:absolute ; left: 350px; width: 300px; text-align: right;'> $_SESSION[adi]</a></li>";
+                  echo "<li><a style='font-size:11px; position:absolute ; left: 430px; width: 300px; text-align: right;'> $_SESSION[adi]</a></li>";
               ?>
               <?php if (isset($_SESSION["login"]))
-                        echo "<li><a href='logout.php' class='fa fa-sign-out' aria-hidden='true' style='font-size:30px; position:absolute ; left:660px;'></a></li>";
+                        echo "<li><a href='logout.php' class='fa fa-sign-out' aria-hidden='true' style='font-size:30px; position:absolute ; left:740px;'></a></li>";
                     else
-                        echo "<li><a href='giris.php' class='fa fa-sign-in' aria-hidden='true' style='font-size:30px; position:absolute ; left:660px;'></a></li>";
+                        echo "<li><a href='giris.php' class='fa fa-sign-in' aria-hidden='true' style='font-size:30px; position:absolute ; left:740px;'></a></li>";
               ?>
           </ul> <!-- end #nav -->
           <?php

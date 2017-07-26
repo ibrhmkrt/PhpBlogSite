@@ -36,7 +36,7 @@
 
             <?php function instagram()
             {
-              $username = 'kotlindeveloper';
+              $username = 'nasa';
               $json = file_get_contents('https://www.instagram.com/'.$username.'/media/');
               $instagram_feed_data = json_decode($json, true);
               if (isset($instagram_feed_data['items'])) {
@@ -47,10 +47,11 @@
         }
         ?>
             <ul class="photostream group">
-            <?php foreach (instagram() as $item) {
-        $link = $item['link'];
-        $img_url = $item['images']['low_resolution']['url'];
-        $caption = isset($item['caption']) ? $item['caption']['text'] : '';
+            <?php
+            $item = instagram();
+            for($i=0;$i<8;$i++) {
+        $link = $item[$i]['link'];
+        $img_url = $item[$i]['images']['low_resolution']['url'];
         echo "<li><a href='$link'><img src='$img_url'></a></li>";
         } ?>
 
@@ -62,11 +63,11 @@
          <h3 class="social">Navigate</h3>
 
          <ul class="navigate group">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Demo</a></li>
-            <li><a href="#">Archives</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="blog.php">Blog</a></li>
+            <li><a href="demo.php">Demo</a></li>
+            <li><a href="archives.php">Archives</a></li>
+            <li><a href="page.php">About</a></li>
          </ul>
       </div>
 
