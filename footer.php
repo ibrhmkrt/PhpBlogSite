@@ -21,7 +21,7 @@
          <h3>Hakkında</h3>
 
          <p>
-           Bu staj bloğu Atatürk Üniversite BAUM'da staj yapan İbrahim Kurt'a aittir.
+           Bu staj bloğu Atatürk Üniversitesi BAUM'da staj yapan İbrahim Kurt'a aittir.
          </p>
 
 

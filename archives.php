@@ -10,17 +10,18 @@
 
    			<section class="page">
 
-					<h2>Archives.</h2>
+					<h2>Arsivler</h2>
 
-					<p class="lead">Lorem ipsum Nisi enim est proident est magna occaecat dolore proident eu ex sunt consectetur consectetur dolore enim nisi exercitation adipisicing magna culpa commodo deserunt ut do Ut occaecat. Lorem ipsum Veniam consequat quis.</p>
+					<p class="lead">Blogla ilgili arsivler asagida bulunmaktadır.</p>
 
 					<div class="row archive-list">
 
 						<div class="twelve columns">
 
-							<h4>Last 10 Posts.</h4>
-
+							<h4>Etiketler</h4>
+            
 				      	<ul>
+
 				      		<li><a href="">Dolor irure velit commodo cillum sit nulla</a></li>
 				      		<li><a href="">laborum mollit quis nostrud sed</a></li>
 				      		<li><a href="">consequat occaecat fugiat in adipisicing</a></li>
@@ -37,15 +38,14 @@
 
 						<div class="twelve columns">
 
-							<h4>Archives By Month.</h4>
-
+							<h4>Aylara göre arsiv</h4>
 					      	<ul>
-					        		<li><a href="">July 2013</a></li>
-					      		<li><a href="">August 2013</a></li>
-					      		<li><a href="">September 2013</a></li>
-					      		<li><a href="">October 2013</a></li>
-					      		<li><a href="">November 2013</a></li>
-					      		<li><a href="">December 2013</a></li>
+					        		<li><a href="">Temmuz 2017</a></li>
+					      		<li><a href="">Agustos 2017</a></li>
+					      		<li><a href="">Eylül 2017</a></li>
+					      		<li><a href="">Ekim 2017</a></li>
+					      		<li><a href="">Kasım 2017</a></li>
+					      		<li><a href="">Aralık 2017</a></li>
 					      	</ul>
 
 						</div>
@@ -56,31 +56,33 @@
 
 						<div class="twelve columns">
 
-							<h4>Archives By Category.</h4>
+							<h4>Kategori Arsivleri</h4>
 
-				      	<ul>
-				      		<li><a href="">Wordpress</a></li>
-				      		<li><a href="">Ghost</a></li>
-				      		<li><a href="">Joomla</a></li>
-				      		<li><a href="">Drupal</a></li>
-				      		<li><a href="">Magento</a></li>
-				      		<li><a href="">Uncategorized</a></li>
-				      	</ul>
-
+              <?php
+               $sorgu = $db->query("SELECT kategoriler.id , kategoriler.Kategori_Adi,COUNT(*) as sayi
+                                    FROM kategoriler INNER JOIN main	ON
+                                    kategoriler.id=main.kategori_id
+                                    GROUP BY main.kategori_id ORDER BY sayi DESC" , PDO::FETCH_ASSOC);
+               if($sorgu -> rowCount()){
+                 foreach ($sorgu as $row) {
+               ?>
+                <li><a href="index.php?kategori=<?php echo $row['id'] ?>" title=""><?php echo $row['Kategori_Adi'] ?></a> (<?php echo $row['sayi'] ?>)</li>
+                <?php
+                  }
+                }
+                ?>
 
 						</div>
 
 						<div class="twelve columns">
-
-							<h4>Site Map.</h4>
+              <br>
+							<h4>Site Haritası</h4>
 
 				      	<ul>
-				      		<li><a href="">Archives</a></li>
-				      		<li><a href="">Home</a></li>
-				      		<li><a href="">About Us</a></li>
-				      		<li><a href="">Blog</a></li>
-				      		<li><a href="">Demo</a></li>
-				      		<li><a href="">Other Stuff</a></li>
+                  <li><a href="index.php">Home</a></li>
+                  <li><a href="blog.php">Blog</a></li>
+                  <li><a href="archives.php">Archives</a></li>
+                  <li><a href="page.php">Page</a></li>
 				      	</ul>
 
 						</div>
