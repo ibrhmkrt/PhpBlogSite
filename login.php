@@ -9,7 +9,18 @@ $sorgu=$db ->query("SELECT * FROM kullanicilar WHERE Kullanici_Adi='$kadi' and S
    $_SESSION["login"] = true;
    $_SESSION["user"] = $kadi;
    $_SESSION["pass"] = $sifre;
-   header("Location:index.php");
+    foreach ($sorgu as $row) {
+   if($row['tipi']==1)
+   {
+        header("Location:adminPanel/index.php");
+        die();
+   }
+   else {
+      header("Location:index.php");
+      die();
+   }
+
+ }
  }
  else{
    if(empty($kadi) or empty($sifre)) {

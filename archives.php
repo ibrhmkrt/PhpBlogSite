@@ -18,20 +18,18 @@
 
 						<div class="twelve columns">
 
-							<h4>Etiketler</h4>
-            
-				      	<ul>
+							<h4>Son Eklenen 10 gönderi</h4>
 
-				      		<li><a href="">Dolor irure velit commodo cillum sit nulla</a></li>
-				      		<li><a href="">laborum mollit quis nostrud sed</a></li>
-				      		<li><a href="">consequat occaecat fugiat in adipisicing</a></li>
-				      		<li><a href="">qui labore cillum sit in tempor veniam consequat</a></li>
-				      		<li><a href="">quis nostrud sed sed</a></li>
-				      		<li><a href="">quis proident ullamco ut dolore</a></li>
-				      		<li><a href="">Dolor irure velit commodo cillum sit nulla</a></li>
-				      		<li><a href="">veniam dolor dolor irure velit commodo cillum</a></li>
-				      		<li><a href="">Dolor irure velit commodo cillum sit nulla</a></li>
-				      		<li><a href="">voluptate enim veniam consequat occaecat</a></li>
+				      	<ul>
+                  <?php
+                   $sorgu = $db->query("SELECT id, yazi_baslik FROM main WHERE gosterim=1 ORDER BY yazi_tarih DESC LIMIT 0,10" , PDO::FETCH_ASSOC);
+                   if($sorgu -> rowCount()){
+                     foreach ($sorgu as $row) {
+                   ?>
+
+				      		<li><a href="single.php?gonderi=<?php echo $row['id'] ?>"><?php echo  $row['yazi_baslik'] ?></a></li>
+
+                  <?php } } ?>
 				      	</ul>
 
 						</div>
@@ -40,13 +38,24 @@
 
 							<h4>Aylara göre arsiv</h4>
 					      	<ul>
-					        		<li><a href="">Temmuz 2017</a></li>
-					      		<li><a href="">Agustos 2017</a></li>
-					      		<li><a href="">Eylül 2017</a></li>
-					      		<li><a href="">Ekim 2017</a></li>
-					      		<li><a href="">Kasım 2017</a></li>
-					      		<li><a href="">Aralık 2017</a></li>
-					      	</ul>
+                    <?php
+                      $degisken;
+                      $sorgu = $db ->query("SELECT yazi_tarih FROM main ORDER BY yazi_tarih DESC   ",PDO::FETCH_ASSOC);
+                      if($sorgu -> rowCount()){
+                        foreach ($sorgu as $row) {
+                          $tarih = substr($row['yazi_tarih'],0,7);
+                          if (empty($degisken) OR $degisken != $tarih){
+                            print "<li><a href='index.php?tarih=".$tarih."'>$tarih</a></li>";
+                          }
+                          $degisken=$tarih;
+
+                    ?>
+
+                    <?php
+                  }
+                }
+                    ?>
+  					      </ul>
 
 						</div>
 

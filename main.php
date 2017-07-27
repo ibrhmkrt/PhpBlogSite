@@ -7,6 +7,9 @@
   elseif (isset($_GET['arama'])) {
       $sorgu = $db->query("SELECT * FROM main WHERE yazi_icerigi LIKE '%".$_GET['arama']."%'  ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
     }
+  elseif (isset($_GET['tarih'])) {
+      $sorgu = $db->query("SELECT * FROM main WHERE yazi_tarih LIKE '%".$_GET['tarih']."%'  ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
+      }
   else
     $sorgu = $db->query("SELECT * FROM main ORDER BY yazi_tarih DESC LIMIT 0,3 " , PDO::FETCH_ASSOC);
 

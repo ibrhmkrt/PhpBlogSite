@@ -22,7 +22,7 @@
      if($sorgu -> rowCount()){
        foreach ($sorgu as $row) {
      ?>
-      <li><a href="?kategori=<?php echo $row['id'] ?>" title=""><?php echo $row['Kategori_Adi'] ?></a> (<?php echo $row['sayi'] ?>)</li>
+      <li><a href="index.php?kategori=<?php echo $row['id'] ?>" title=""><?php echo $row['Kategori_Adi'] ?></a> (<?php echo $row['sayi'] ?>)</li>
       <?php
         }
       }
