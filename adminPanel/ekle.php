@@ -14,7 +14,10 @@ function kayitekle($Baslik,$icerik,$kategori,$yazar,$kategori_id)
 global $db;
 $ekle =$db -> prepare("INSERT INTO main(yazi_baslik,yazi_icerigi,yazi_kategori,yazar,kategori_id) VALUES(?,?,?,?,?)");
 $ekle->execute(array($Baslik,$icerik,$kategori,$yazar,$kategori_id));
-header("Location:tables.php");
+
+echo 'Yazınız Başarıyla Paylaşılmıştır';
+header('Refresh: 1; URL = Ekleme.php');
+
 }
 kayitekle($Baslik,$icerik,$kategori,$yazar,$kategori_id);
 

@@ -6,11 +6,9 @@
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li class="current"><a href="index.php"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
-                    <li><a href="tables.php"><i class="glyphicon glyphicon-list"></i> İçerik Ekle</a></li>
-                    <li><a href="buttons.php"><i class="glyphicon glyphicon-record"></i> Buttons</a></li>
-                    <li><a href="editors.php"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li>
-                    <li><a href="forms.php"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
+                    <li class="current"><a href="index.php"><i class="glyphicon glyphicon-home"></i>Panel Anasayfa</a></li>
+                    <li><a href="Ekleme.php"><i class=" glyphicon glyphicon-floppy-save"></i> İçerik Ekle</a></li>
+                    <li><a href="Sil.php"><i class="glyphicon glyphicon-floppy-remove"></i> İçerik Sil</a></li>
                     <li><a href="../index.php"><i class="glyphicon glyphicon-log-out"></i> Anasayfaya Dön</a></li>
 
                 </ul>

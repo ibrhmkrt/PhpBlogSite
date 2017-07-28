@@ -6,11 +6,9 @@
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
-                    <li class="current"><a href="tables.php"><i class="glyphicon glyphicon-list"></i> İçerik Ekle</a></li>
-                    <li><a href="buttons.php"><i class="glyphicon glyphicon-record"></i> Buttons</a></li>
-                    <li><a href="editors.php"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li>
-                    <li><a href="forms.php"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
+                    <li><a href="index.php"><i class="glyphicon glyphicon-home"></i>Panel Anasayfa</a></li>
+                    <li class="current"><a href="Ekleme.php"><i class=" glyphicon glyphicon-floppy-save"></i> İçerik Ekle</a></li>
+                    <li><a href="Sil.php"><i class="glyphicon glyphicon-floppy-remove"></i> İçerik Sil</a></li>
                     <li><a href="../index.php"><i class="glyphicon glyphicon-log-out"></i> Anasayfaya Dön</a></li>
 
                 </ul>
@@ -34,12 +32,12 @@
                 <fieldset>
                   <div class="form-group">
                     <label>Yazı Başlığınız</label>
-                    <input class="form-control" placeholder="Text field" type="text" name="baslik" >
+                    <input class="form-control"  type="text" name="baslik" >
                   </div>
 
                   <div class="form-group">
                     <label>Yazı İçeriği</label>
-                    <textarea class="form-control" placeholder="Textarea" rows="3" name="icerik"></textarea>
+                    <textarea class="form-control"  rows="3" name="icerik"></textarea>
                   </div>
                   <div class="form-group">
                     <label >Yazı Kategori</label>
