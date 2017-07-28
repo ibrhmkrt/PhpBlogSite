@@ -92,6 +92,14 @@
               if(isset($_SESSION["adi"]))
                   echo "<li><a style='font-size:11px; position:absolute ; left: 430px; width: 300px; text-align: right;'> $_SESSION[adi]</a></li>";
               ?>
+              <?php
+              if(isset($_SESSION["adi"]) and $_SESSION["tip"]==1 ) {
+                  echo "<li><a href='adminPanel/index.php' style='font-size:10px; color:#3CB371; position:absolute ; left: 300px; width: 300px; text-align: right;'>Admin Paneline Git</a></li>";
+
+                }
+              ?>
+
+
               <?php if (isset($_SESSION["login"]))
                         echo "<li><a href='logout.php' class='fa fa-sign-out' aria-hidden='true' style='font-size:30px; position:absolute ; left:730px;'></a></li>";
                     else
