@@ -75,12 +75,12 @@
               <?php
               $sorgu=$db -> query ("SELECT count(yorumlar.id) as adet
                                     FROM yorumlar INNER JOIN main ON main.id=yorumlar.icerik_id
-                                      WHERE main.id=".$_GET['gonderi'] , PDO::FETCH_ASSOC) -> fetch();
+                                      WHERE main.id=".$_GET['gonderi']." AND  yorumlar.yayinla=1 ", PDO::FETCH_ASSOC) -> fetch();
               if ($sorgu['adet'] > 0) {
                   echo "<h4>".$sorgu['adet']." Yorum</h4>";
                   $sorgu=$db -> query ("SELECT yorumlar.yapilan_yorum AS yorum, yorumlar.yorum_tarihi AS tarih , kullanicilar.AdiSoyadi AS yazar
                                         FROM yorumlar INNER JOIN main ON main.id=yorumlar.icerik_id INNER JOIN kullanicilar ON yorumlar.kullanici_id=kullanicilar.id
-                                        WHERE main.id=".$_GET['gonderi']." ORDER BY yorumlar.yorum_tarihi DESC" , PDO::FETCH_ASSOC) -> fetchAll();
+                                        WHERE main.id=".$_GET['gonderi']." AND yorumlar.yayinla=1 ORDER BY yorumlar.yorum_tarihi " , PDO::FETCH_ASSOC) -> fetchAll();
                   foreach ($sorgu as $row) {
 
 
