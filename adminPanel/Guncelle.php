@@ -2,7 +2,7 @@
 <?php
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['guncelle']))
-      $sorgu = $db->exec("UPDATE main SET yazi_baslik='".$_POST['baslik']."' ,yazi_icerigi='".$_POST['icerik']."' WHERE id=".$_POST['id'].""); 
+      $sorgu = $db->exec("UPDATE main SET yazi_baslik='".$_POST['baslik']."' ,yazi_icerigi='".$_POST['icerik']."' WHERE id=".$_POST['id']."");
   }
 ?>
     <div class="page-content">
@@ -63,7 +63,7 @@
                             <td><?php echo $row['yazar'] ?></td>
                             <td><?php echo $row['yazi_tarih'] ?></td>
                             <td><?php echo $row['yazi_kategori'] ?></td>
-                            <td><?php echo substr($row['yazi_icerigi'], 0, 20) ?></td>
+                            <td><?php echo htmlspecialchars(substr($row['yazi_icerigi'], 0, 28)) ?></td>
                             <td><button type="submit" name="duzenle"  class="btn btn-primary" value="<?php echo $row['id'] ?>" >Düzenle</button></td>
 
 
@@ -103,7 +103,7 @@
                   </div>
                   <div class="form-group">
                     <label>Yazı İçeriği</label>
-                    <textarea class="form-control"  rows="3" name="icerik"><?php echo $sorgu['yazi_icerigi'] ?></textarea>
+                    <textarea id="ckeditor_full"  rows="3" name="icerik"><?php echo $sorgu['yazi_icerigi'] ?></textarea>
                   </div>
                 </fieldset>
                   <div>
@@ -123,21 +123,29 @@
     </div>
 
 
+          <link href="vendors/datatables/dataTables.bootstrap.css" rel="stylesheet" media="screen">
 
-      <link href="vendors/datatables/dataTables.bootstrap.css" rel="stylesheet" media="screen">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- jQuery UI -->
+        <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendors/datatables/js/jquery.dataTables.min.js"></script>
 
-    <script src="vendors/datatables/js/jquery.dataTables.min.js"></script>
+        <script src="vendors/datatables/dataTables.bootstrap.js"></script>
 
-    <script src="vendors/datatables/dataTables.bootstrap.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/tables.js"></script>
+        <link rel="stylesheet" type="text/css" href="vendors/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css"></link>
+       <script src="vendors/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+       <script src="vendors/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+       <script src="vendors/ckeditor/ckeditor.js"></script>
+       <script src="vendors/ckeditor/adapters/jquery.js"></script>
+       <script type="text/javascript" src="vendors/tinymce/js/tinymce/tinymce.min.js"></script>
+       <script src="js/editors.js"></script>
 
-    <script src="js/custom.js"></script>
-    <script src="js/tables.js"></script>
+
   </body>
 </html>

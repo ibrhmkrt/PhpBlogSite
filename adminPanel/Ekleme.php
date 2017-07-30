@@ -1,3 +1,4 @@
+
 <?php include_once "header.php" ?>
 
     <div class="page-content">
@@ -19,7 +20,7 @@
 		  <div class="col-md-10">
 
 		  	<div class="row">
-          <div class="col-md-6">
+          <div class="col-md-10">
             <div class="content-box-large">
               <div class="panel-heading">
                     <div class="panel-title">İçerik Ekleme</div>
@@ -39,8 +40,9 @@
 
                   <div class="form-group">
                     <label>Yazı İçeriği</label>
-                    <textarea class="form-control"  rows="3" name="icerik"></textarea>
+                    <textarea  id="ckeditor_full"  rows="3" name="icerik"></textarea>
                   </div>
+
                   <div class="form-group">
                     <label >Yazı Kategori</label>
                     <div >
@@ -77,6 +79,7 @@
 
 
 
+
       <link href="vendors/datatables/dataTables.bootstrap.css" rel="stylesheet" media="screen">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -92,5 +95,13 @@
 
     <script src="js/custom.js"></script>
     <script src="js/tables.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendors/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css"></link>
+   <script src="vendors/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+   <script src="vendors/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+   <script src="vendors/ckeditor/ckeditor.js"></script>
+   <script src="vendors/ckeditor/adapters/jquery.js"></script>
+   <script type="text/javascript" src="vendors/tinymce/js/tinymce/tinymce.min.js"></script>
+   <script src="js/editors.js"></script>
+
   </body>
 </html>
