@@ -101,9 +101,9 @@
 
 
               <?php if (isset($_SESSION["login"]))
-                        echo "<li><a href='logout.php' class='fa fa-sign-out' aria-hidden='true' style='font-size:30px; position:absolute ; left:730px;'></a></li>";
+                        echo "<li><a href='logout.php' class='fa fa-sign-out' aria-hidden='true' style='font-size:30px; position:absolute ; left:720px;'></a></li>";
                     else
-                        echo "<li><a href='giris.php' class='fa fa-sign-in' aria-hidden='true' style='font-size:30px; position:absolute ; left:730px;'></a></li>";
+                        echo "<li><a href='giris.php' class='fa fa-sign-in' aria-hidden='true' style='font-size:30px; position:absolute ; left:720px;'></a></li>";
               ?>
           </ul> <!-- end #nav -->
           <?php

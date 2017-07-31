@@ -64,7 +64,7 @@
                           <tr class="success">
 
                             <td><?php echo $row['id'] ?></td>
-                            <td><?php echo $row['yapilan_yorum'] ?></td>
+                            <td><?php echo substr($row['yapilan_yorum'],0,35)."..." ?></td>
                             <td><?php echo $row['yorum_tarihi'] ?></td>
                             <td><?php echo $row['AdiSoyadi'] ?></td>
                             <td><?php echo $row['yazi_baslik'] ?></td>
