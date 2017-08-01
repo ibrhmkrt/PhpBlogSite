@@ -1,5 +1,11 @@
 <?php include_once "header.php" ?>
-
+<?php
+ob_start();
+if(!isset($_SESSION["adi"])){
+    header("Location:../giris.php");
+}
+else {
+?>
     <div class="page-content">
     	<div class="row">
 		  <div class="col-md-2">
@@ -98,7 +104,7 @@
 		  </div>
 		</div>
     </div>
-
+  <?php } ?>
 
 
       <link href="vendors/datatables/dataTables.bootstrap.css" rel="stylesheet" media="screen">

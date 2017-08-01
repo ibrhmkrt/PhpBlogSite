@@ -1,5 +1,13 @@
 <?php include_once "header.php" ?>
 <?php
+ob_start();
+if(!isset($_SESSION["adi"])){
+    header("Location:../giris.php");
+}
+else {
+?>
+
+<?php
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['guncelle']))
       $sorgu = $db->exec("UPDATE main SET yazi_baslik='".$_POST['baslik']."' ,yazi_icerigi='".$_POST['icerik']."' WHERE id=".$_POST['id']."");
@@ -121,6 +129,7 @@
 		  </div>
 		</div>
     </div>
+    <?php } ?>
 
 
           <link href="vendors/datatables/dataTables.bootstrap.css" rel="stylesheet" media="screen">
