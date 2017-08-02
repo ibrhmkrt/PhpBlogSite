@@ -2,7 +2,10 @@
 <?php
 ob_start();
 if(!isset($_SESSION["adi"])){
-    header("Location:../giris.php");
+  header("Location:../giris.php");
+}
+else if ($_SESSION["tip"]==0) {
+  header("Location:../giris.php");
 }
 else {
 ?>
