@@ -84,7 +84,7 @@
 			      	<li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/blog.php") print "class='current has-children'"; ?>><a href="blog.php"><?php echo $row['Menu4'] ?></a>
 							<ul>
 	                     <li><a href="blog.php">Blog Entries</a></li>
-	                     <li><a href="single.php">Single Blog</a></li>
+	                     <li><a href="single.php">yorumlar Blog</a></li>
 	                  </ul>
 			      	</li>
 			      	<li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/page.php") print "class='current'"; ?>><a href="page.php"><?php echo $row['Menu5'] ?></a></li>
