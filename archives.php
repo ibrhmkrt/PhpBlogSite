@@ -88,10 +88,10 @@
 							<h4>Site Haritası</h4>
 
 				      	<ul>
-                  <li><a href="index.php">Home</a></li>
+                  <li><a href="index.php">Anasayfa</a></li>
                   <li><a href="blog.php">Blog</a></li>
-                  <li><a href="archives.php">Archives</a></li>
-                  <li><a href="page.php">Page</a></li>
+                  <li><a href="archives.php">Arsivler</a></li>
+                  <li><a href="page.php">İletisim</a></li>
 				      	</ul>
 
 						</div>

@@ -76,18 +76,11 @@
         <?php
          $sorgu = $db->query("SELECT * FROM menuler " , PDO::FETCH_ASSOC);
          if($sorgu -> rowCount()){
-           foreach ($sorgu as $row) {
          ?>
 			   	<ul id="nav" class="nav">
-			      	<li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/index.php") print "class='current'"; ?>><a href="index.php"><?php echo $row['Menu1'] ?></a></li>
-	               <li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/archives.php") print "class='current'"; ?>><a href="archives.php"><?php echo $row['Menu3'] ?></a></li>
-			      	<li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/blog.php") print "class='current has-children'"; ?>><a href="blog.php"><?php echo $row['Menu4'] ?></a>
-							<ul>
-	                     <li><a href="blog.php">Blog Entries</a></li>
-	                     <li><a href="single.php">yorumlar Blog</a></li>
-	                  </ul>
-			      	</li>
-			      	<li <?php if($_SERVER['PHP_SELF'] == "/staj_proje/page.php") print "class='current'"; ?>><a href="page.php"><?php echo $row['Menu5'] ?></a></li>
+            <?php  foreach ($sorgu as $row) { ?>
+			      	<li <?php if("http://localhost".$_SERVER['PHP_SELF'] == $row['menuAdres']) print "class='current'"; ?>><a href="<?php echo $row['menuAdres'] ?>"><?php echo $row['menuAdi'] ?></a></li>
+            <?php } ?>
               <?php
               if(isset($_SESSION["adi"]))
                   echo "<li><a style='font-size:11px; position:absolute ; left: 430px; width: 300px; text-align: right;'> $_SESSION[adi]</a></li>";
@@ -95,7 +88,6 @@
               <?php
               if(isset($_SESSION["adi"]) and $_SESSION["tip"]==1 ) {
                   echo "<li><a href='adminPanel/index.php' style='font-size:10px; color:#3CB371; position:absolute ; left: 300px; width: 300px; text-align: right;'>Admin Paneline Git</a></li>";
-
                 }
               ?>
 
@@ -107,7 +99,6 @@
               ?>
           </ul> <!-- end #nav -->
           <?php
-            }
           }
           ?>
 	   	</div>

@@ -5,7 +5,7 @@
     $sorgu = $db->query("SELECT * FROM main WHERE main.kategori_id=".$_GET['kategori']."  ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
   }
   elseif (isset($_GET['arama'])) {
-      $sorgu = $db->query("SELECT * FROM main WHERE yazi_icerigi LIKE '%".$_GET['arama']."%'  ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
+      $sorgu = $db->query("SELECT * FROM main WHERE yazi_icerigi LIKE '%".$_GET['arama']."%'  or yazar LIKE '%".$_GET['arama']."%'  or yazi_kategori LIKE '%".$_GET['arama']."%'  ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);
     }
   elseif (isset($_GET['tarih'])) {
       $sorgu = $db->query("SELECT * FROM main WHERE yazi_tarih LIKE '%".$_GET['tarih']."%'  ORDER BY yazi_tarih DESC " , PDO::FETCH_ASSOC);

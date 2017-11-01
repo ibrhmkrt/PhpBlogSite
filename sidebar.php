@@ -33,7 +33,7 @@
   <div class="widget widget_text group">
     <h3>PHP HAKKINDA</h3>
 
-    <p>PHP,ya da resmi adıyla "PHP: Hypertext Preprocessor"(PHP: Hipermetin önişlemcisi), HTML'e gömülebilen, sunucu tarafından işlenen kodlar yazabileceğiniz, tamamen açık kaynaklı bir dildir. Yani dinamik içerik oluşturmada tercih edebileceğiniz bir programlama dilidir.</p>
+    <p>PHP,ya da resmi adıyla "PHP: Hypertext Preprocessor"(PHP: Hipermetin önişlemcisi), HTML'e gömülebilen, sunucu tarafından işlenen kodlar yazabileceğiniz, tamamen açık kaynaklı bir dildir.</p>
 
   </div>
 

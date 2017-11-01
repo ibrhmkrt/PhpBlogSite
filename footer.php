@@ -34,7 +34,7 @@
 
             <?php function instagram()
             {
-              $username = 'nasa';
+              $username = 'nasa'; //instagram sayfası kullanıcı adı
               $json = file_get_contents('https://www.instagram.com/'.$username.'/media/');
               $instagram_feed_data = json_decode($json, true);
               if (isset($instagram_feed_data['items'])) {
@@ -47,11 +47,11 @@
             <ul class="photostream group">
             <?php
             $item = instagram();
-            for($i=0;$i<8;$i++) {
-        $link = $item[$i]['link'];
-        $img_url = $item[$i]['images']['low_resolution']['url'];
-        echo "<li><a href='$link'><img src='$img_url'></a></li>";
-        } ?>
+            for($i=0;$i<8;$i++) { // 8 fotoğraf ile sınırlandırma getirdik
+                $link = $item[$i]['link'];
+                $img_url = $item[$i]['images']['low_resolution']['url'];
+                echo "<li><a href='$link'><img src='$img_url'></a></li>";
+              } ?>
 
          </ul>
 
@@ -61,10 +61,10 @@
          <h3 class="social">Navigate</h3>
 
          <ul class="navigate group">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index.php">Anasayfa</a></li>
             <li><a href="blog.php">Blog</a></li>
-            <li><a href="archives.php">Archives</a></li>
-            <li><a href="page.php">Page</a></li>
+            <li><a href="archives.php">Arsivler</a></li>
+            <li><a href="page.php">İletisim</a></li>
          </ul>
       </div>
 
@@ -75,3 +75,4 @@
    <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-chevron-up"></i></a></div>
 
 </footer> <!-- End Footer-->
+<?php  $db=null; ?>
